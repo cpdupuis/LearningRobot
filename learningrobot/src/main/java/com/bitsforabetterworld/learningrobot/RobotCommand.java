@@ -13,15 +13,17 @@ public abstract class RobotCommand {
 
     protected abstract boolean isFinished();
 
-    public final synchronized void run() throws InterruptedException {
+    public final synchronized void runOneIteration() throws InterruptedException {
         if (!isInitialized) {
             initialize();
             isInitialized = true;
         }
-        while (!isFinished()) {
+        if (!isFinished()) {
             execute();
             this.wait(20);
         }
-        end();
+        else {
+            end();
+        }
     }
 }

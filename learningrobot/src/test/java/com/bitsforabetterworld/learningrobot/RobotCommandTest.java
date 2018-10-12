@@ -9,7 +9,11 @@ public class RobotCommandTest {
     public void testDriveForward() throws InterruptedException {
         Robot robot = new Robot(0.0, 0.0, 0.0, 0.0, 10.0);
         RobotCommand command = new ExampleRobot(robot, robot);
-        command.run();
+        while (! command.isFinished()) {
+            command.runOneIteration();
+            robot.updateTime(20);
+            this.wait(20);
+        }
         assertTrue(robot.isTargetReached());
         assertFalse(robot.isCrashed());
     }
