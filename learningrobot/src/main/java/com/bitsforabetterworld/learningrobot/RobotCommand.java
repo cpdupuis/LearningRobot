@@ -13,14 +13,13 @@ public abstract class RobotCommand {
 
     protected abstract boolean isFinished();
 
-    public final synchronized void runOneIteration() throws InterruptedException {
+    public final void runOneIteration() {
         if (!isInitialized) {
             initialize();
             isInitialized = true;
         }
         if (!isFinished()) {
             execute();
-            this.wait(20);
         }
         else {
             end();

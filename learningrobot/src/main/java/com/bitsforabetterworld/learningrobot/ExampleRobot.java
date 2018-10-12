@@ -15,7 +15,8 @@ public class ExampleRobot extends RobotCommand {
 
     @Override
     protected void execute() {
-        System.out.println("Executing.");
+        double forwardSpeed = 0.01;
+        drive.setSpeed(forwardSpeed, 0.0, 0.0);
     }
 
     @Override
@@ -25,7 +26,7 @@ public class ExampleRobot extends RobotCommand {
 
     @Override
     protected  boolean isFinished() {
-        return true;
+        return sensors.isTargetReached();
     }
 
 }
