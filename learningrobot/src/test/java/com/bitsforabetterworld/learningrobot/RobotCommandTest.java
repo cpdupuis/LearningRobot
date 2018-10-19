@@ -22,7 +22,7 @@ public class RobotCommandTest {
         Robot robot = new Robot(0.0, 0.0, 0.0, 0.0, 10.0);
         RobotCommand command = new ExampleRobot(robot, robot);
         int totalMillis = 0;
-        while (! command.isFinished() && totalMillis < 5000) {
+        while (! command.isFinished() && totalMillis < 10000) {
             command.runOneIteration();
             robot.updateTime(20);
             totalMillis += 20;
