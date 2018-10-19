@@ -55,7 +55,7 @@ public class Robot implements RobotSensorInterface, RobotDrivingInterface {
             double speed = Math.pow(Math.pow(forwardSpeed, 2.0) + Math.pow(rightSpeed, 2.0), 0.5);
             if (speed > SAFE_SPEED) {
                 this.isCrashed = true;
-                return true;
+                throw new RuntimeException("You crashed! Speed at the target was " + speed + ", which is more than the safe speed of " + SAFE_SPEED);
             }
         }
         return false;
