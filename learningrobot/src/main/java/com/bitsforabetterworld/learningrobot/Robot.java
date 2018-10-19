@@ -78,7 +78,12 @@ public class Robot implements RobotSensorInterface, RobotDrivingInterface {
         double angleRadians =  Math.atan2(yToTarget, xToTarget);
         double angleDegrees = Math.toDegrees(angleRadians);
 
-        return (angleDegrees + robotRotation) % 360.0;
+        
+        double angle = (angleDegrees + robotRotation) % 360.0;
+        if (angle >= 180.0) {
+            angle = 360.0 - angle;
+        }
+        return angle;
     } 
     
     @Override

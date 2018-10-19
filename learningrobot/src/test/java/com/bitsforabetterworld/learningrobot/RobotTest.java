@@ -15,7 +15,12 @@ public class RobotTest {
         assertFalse(robot.isCrashed());
         robot.updateTime(1000);
         assertTrue(robot.isTargetReached());
-        assertTrue(robot.isCrashed());
+        try {
+            assertTrue(robot.isCrashed());
+        }
+        catch (RuntimeException ex) {
+            // expected
+        }
     }
 
     @Test
@@ -30,7 +35,12 @@ public class RobotTest {
         assertEquals(10.0, robot.getRobotX(), 0.01);
         assertEquals(0.0, robot.getDistanceToTarget(), 0.01);
         assertTrue(robot.isTargetReached());
-        assertTrue(robot.isCrashed());
+        try {
+            assertTrue(robot.isCrashed());
+        }
+        catch (RuntimeException ex) {
+            // expected.
+        }
     }
 
     @Test
@@ -45,7 +55,12 @@ public class RobotTest {
         assertEquals(-10.0, robot.getRobotX(), 0.01);
         assertEquals(0.0, robot.getDistanceToTarget(), 0.01);
         assertTrue(robot.isTargetReached());
-        assertTrue(robot.isCrashed());
+        try {
+            assertTrue(robot.isCrashed());
+        }
+        catch (RuntimeException ex) {
+            // expected
+        }
 
     }
 
@@ -61,7 +76,12 @@ public class RobotTest {
         assertEquals(0.0, robot.getRobotX(), 0.01);
         assertEquals(0.0, robot.getDistanceToTarget(), 0.01);
         assertTrue(robot.isTargetReached());
-        assertTrue(robot.isCrashed());
+        try {
+            assertTrue(robot.isCrashed());
+        }
+        catch (RuntimeException ex) {
+            // expected
+        }
     }
 
     @Test
@@ -78,7 +98,12 @@ public class RobotTest {
         assertEquals(10.0, robot.getRobotX(), 0.01);
         assertEquals(0.0, robot.getDistanceToTarget(), 0.01);
         assertTrue(robot.isTargetReached());
-        assertTrue(robot.isCrashed());
+        try {
+            assertTrue(robot.isCrashed());
+        }
+        catch (RuntimeException ex) {
+            // expected
+        }
     }
 
     @Test
