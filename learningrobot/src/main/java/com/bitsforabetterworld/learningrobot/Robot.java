@@ -69,19 +69,23 @@ public class Robot implements RobotSensorInterface, RobotDrivingInterface {
         return robotY;
     }
 
+    public double getRobotAngle() {
+        return robotRotation;
+    }
+
     @Override
     // What is the direction to the target in the robot's perspective, in degrees?
     public double getDirectionToTarget() {
         double xToTarget = targetX - robotX;
         double yToTarget = targetY - robotY;
         
-        double angleRadians =  Math.atan2(yToTarget, xToTarget);
+        double angleRadians =  Math.atan2(xToTarget, yToTarget);
         double angleDegrees = Math.toDegrees(angleRadians);
 
         
-        double angle = (angleDegrees + robotRotation) % 360.0;
+        double angle = (angleDegrees - robotRotation) % 360.0;
         if (angle >= 180.0) {
-            angle = 360.0 - angle;
+            angle = angle - 360.0;
         }
         return angle;
     } 
