@@ -27,3 +27,6 @@ the path where you unpacked Java. For example:
 
 
 or use this script from Josh: https://bit.ly/2x5A1hk
+
+
+THEN: Do the exercises here: https://github.com/KentridgeRobotics/2017Robot-Controls/blob/master/2017%20Robot/LearningJava.txt
