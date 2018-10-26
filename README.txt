@@ -25,4 +25,5 @@ the path where you unpacked Java. For example:
         "maven.executable.path": "C:\\Users\\cpdup\\java_tools\\apache-maven-3.5.4\\bin\\mvn"
 
 
-7. 
+
+or use this script from Josh: https://bit.ly/2x5A1hk
